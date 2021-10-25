@@ -21,11 +21,7 @@ function initMap() {
     map: map
    });
 
-  
 
-   
-
-    //-------- Añadiendo autocompletado--//
   new google.maps.places.Autocomplete(inputDestino);
   new google.maps.places.Autocomplete(inputDestinoB);
   new google.maps.places.Autocomplete(inputDestinoC);
@@ -35,7 +31,6 @@ function initMap() {
 
 }
  
-// --------Trazando Ruta------//
 document.getElementById("form1").addEventListener("submit", function(e) {
   e.preventDefault();
 
@@ -60,7 +55,6 @@ document.getElementById("form1").addEventListener("submit", function(e) {
           
           var distancia = Number((response.routes[0].legs[0].distance.text.replace("km","")).replace(",","."));
        
-          var point = response.routes[ 0 ].legs[ 0 ];
           $( '#mostrar_distancia').html( 'Distancia Estimada: '  + distancia * 1000 +' metros' );
           mostrar_distancia.classList.remove("none");
           console.log(response.routes[0].legs[0].distance.text);
